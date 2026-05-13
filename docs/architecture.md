@@ -4,53 +4,28 @@ nistula-technical-assessment/
 ├── schema.sql
 ├── thinking.md
 ├── .env.example
-├── .gitignore
 ├── package.json
-├── package-lock.json
+├── .gitignore
 │
 ├── src/
 │   │
 │   ├── server.js
-│   ├── app.js
 │   │
 │   ├── routes/
-│   │   └── messageRoutes.js
+│   │   └── webhook.routes.js
 │   │
 │   ├── controllers/
-│   │   └── messageController.js
+│   │   └── message.controller.js
 │   │
 │   ├── services/
-│   │   ├── aiService.js
-│   │   ├── normalizationService.js
-│   │   ├── classificationService.js
-│   │   └── confidenceService.js
-│   │
-│   ├── prompts/
-│   │   └── claudePrompt.js
-│   │
-│   ├── middleware/
-│   │   ├── validateRequest.js
-│   │   └── errorHandler.js
+│   │   ├── claude.service.js
+│   │   ├── classifier.service.js
+│   │   ├── confidence.service.js
+│   │   └── normalization.service.js
 │   │
 │   ├── utils/
-│   │   ├── actionDecider.js
-│   │   ├── generateMessageId.js
-│   │   └── logger.js
+│   │   ├── action.util.js
+│   │   └── prompts.js
 │   │
-│   ├── constants/
-│   │   ├── propertyContext.js
-│   │   ├── queryTypes.js
-│   │   └── actionTypes.js
-│   │
-│   └── tests/
-│       ├── payloads/
-│       │   ├── availability.json
-│       │   ├── pricing.json
-│       │   ├── complaint.json
-│       │   └── specialRequest.json
-│       │
-│       └── api.test.js
-│
-└── docs/
-    ├── architecture.md
-    └── api-examples.md
+│   └── middleware/
+│       └── error.middleware.js

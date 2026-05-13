@@ -1,26 +1,37 @@
 # Nistula Technical Assessment
 
 ## Overview
-What the project does
-
-## Tech Stack
-Node.js, Express, Claude API
 
 ## Features
-- Webhook endpoint
-- Message normalization
-- Query classification
-- AI drafted replies
-- Confidence scoring
 
-## Setup Instructions
+## Tech Stack
+
+## Project Structure
+
+## System Flow
 
 ## API Endpoint
 
-## Example Request/Response
+## Sample Request
+
+## Sample Response
+
+## Query Classification Logic
 
 ## Confidence Scoring Logic
 
-## Error Handling
+## Action Routing Logic
+
+## Claude AI Integration
+
+## Setup Instructions
+
+## Environment Variables
+
+## Running The Project
+
+## Testing
+
+## Design Decisions
 
 ## Future Improvements
