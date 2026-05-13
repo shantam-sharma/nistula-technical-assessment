@@ -8,7 +8,7 @@
 
 **What should the AI reply right now at 3am? Write the actual message.**
 
-> We're very sorry for the inconvenience. We completely understand that having no hot water is a major issue, especially with guests arriving in just a few hours. Our maintenance team has been alerted and is treating this as a high priority. You can expect hot water to be available within 30–45 minutes. Management will follow up later this morning to discuss a fair resolution regarding your refund request. Thank you for bringing this to our attention immediately — please let us know if there is anything further we can assist you with in the meantime.
+> We're very sorry for the inconvenience. We completely understand that having no hot water is a major issue, especially with guests arriving in just a few hours. Our maintenance team has been alerted and is treating this as a high priority. You can expect hot water to be available within 30–45 minutes. Management will follow up later this morning to discuss a fair resolution regarding your refund request. Thank you for bringing this to our attention immediately please let us know if there is anything further we can assist you with in the meantime.
 
 **Why this wording:**
 
@@ -63,7 +63,7 @@
 at Villa B1. What should the system do with this pattern? What would you
 build to prevent this complaint from happening a fourth time?**
 
-Since this is the third hot water complaint in two months for Villa B1, the system should recognize it as a recurring operational issue instead of treating it as isolated guest feedback. The platform should automatically flag Villa B1 as a “repeat maintenance risk” property and flag the issue to operations management for investigation and finding a permanent solution.
+- Since this is the third hot water complaint in two months for Villa B1, the system should recognize it as a recurring operational issue instead of treating it as isolated guest feedback. The platform should automatically flag Villa B1 as a “repeat maintenance risk” property and flag the issue to operations management for investigation and finding a permanent solution.
 ### To prevent this complaint from happening a fourth time, the system should:
 1. Introduce proactive guest monitoring by sending a quick pre-check message asking guests if all utilities, including hot water, are functioning properly shortly after check-in.
 2. Track and analyze complaint patterns by villa, issue type, and time of occurrence to identify recurring operational failures automatically.
