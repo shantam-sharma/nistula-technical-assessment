@@ -4,7 +4,7 @@ CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 -- Supported communication channels
 CREATE TYPE message_source AS ENUM (
     'whatsapp',
-    'booking.com',
+    'booking_om',
     'airbnb',
     'instagram',
     'direct'
@@ -53,7 +53,7 @@ CREATE TYPE conversation_status AS ENUM (
 );
 
 CREATE TABLE guests (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid();
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     full_name VARCHAR(300) NOT NULL,
     email VARCHAR(300),
     phone VARCHAR(30),
@@ -72,6 +72,7 @@ CREATE TABLE properties (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     property_code VARCHAR(100) NOT NULL UNIQUE,
     name VARCHAR(300) NOT NULL,
+    location VARCHAR(255) NOT NULL,
     bedrooms INTEGER NOT NULL CHECK (bedrooms > 0),
     max_guests INTEGER NOT NULL CHECK (max_guests > 0),
     base_rate NUMERIC(10,2) NOT NULL CHECK (base_rate >= 0),
@@ -148,16 +149,16 @@ CREATE INDEX idx_reservations_dates
 ON reservations(check_in, check_out);
 --useful to view "what bookings overlap these dates?"
 
-CREATE TABLE conversation (
+CREATE TABLE conversations (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    guest_id UUID NOT NULL
+    guest_id UUID NOT NULL,
     reservation_id UUID,
     property_id UUID NOT NULL,
     conversation_status conversation_status NOT NULL DEFAULT 'open',
     started_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     last_message_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-    CONSTRAINT fk_conversation_reservation
+    CONSTRAINT fk_conversation_guest
         FOREIGN KEY (guest_id)
         REFERENCES guests(id)
         ON DELETE RESTRICT,
@@ -165,12 +166,12 @@ CREATE TABLE conversation (
     CONSTRAINT fk_conversation_reservation
         FOREIGN KEY (reservation_id)
         REFERENCES reservations(id)
-        ON DELETE SET NULL
+        ON DELETE SET NULL,
 
     CONSTRAINT fk_conversation_property
         FOREIGN KEY (property_id)
         REFERENCES properties(id)
-        ON DELETE RESTRICT
+        ON DELETE RESTRICT,
 );
 /*
 Why This Table Exists
@@ -192,8 +193,6 @@ So conversations act as: message threads
 
 CREATE INDEX idx_conversations_guest_id
 ON conversations(guest_id);
-CREATE INDEX idx_conversations_property_id
-ON conversations(property_id);
 CREATE INDEX idx_conversations_property_id
 ON conversations(property_id);
 
