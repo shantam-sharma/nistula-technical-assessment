@@ -66,3 +66,78 @@ To prevent this complaint from happening a fourth time, the system should:
 6. If repeated failures continue even after maintenance, the system should recommend deeper infrastructure inspection or replacement of the heating equipment instead of repeated short-term fixes.
 7. The issue is marked as high priority and assigned to senior maintenance staff instead of standard support handling.
 ___________________________________________________________________________________________________________________________
+# PART 3 — THINKING QUESTION
+
+**SCENARIO:** It is 3am. A guest at Villa B1 sends a WhatsApp message: *"There is no hot water and we have guests arriving for breakfast in 4 hours. This is unacceptable. I want a refund for tonight."*
+
+---
+
+## Question A — The Immediate Response
+
+**What should the AI reply right now at 3am? Write the actual message.**
+
+> We're very sorry for the inconvenience. We completely understand that having no hot water is a major issue, especially with guests arriving in just a few hours. Our maintenance team has been alerted and is treating this as a high priority. You can expect hot water to be available within 30–45 minutes. Management will follow up later this morning to discuss a fair resolution regarding your refund request. Thank you for bringing this to our attention immediately — please let us know if there is anything further we can assist you with in the meantime.
+
+**Why this wording:**
+
+- The response opens with empathy and acknowledgment to calm the guest and show their concern is being taken seriously.
+- A concrete timeline (30–45 minutes) is provided to rebuild trust and reduce the uncertainty that makes stressful situations worse.
+- The refund request is acknowledged professionally without premature promises, keeping the tone hospitable and measured at 3am.
+- The message is kept short and direct to avoid further frustrating the guest, while still delivering all essential information clearly.
+
+---
+
+## Question B — The System Design
+
+**What should the platform do beyond sending a message?**
+
+### What gets triggered
+
+1. The AI classifies the message as a "high-priority maintenance issue" based on keywords like "no hot water," "unacceptable," and "refund."
+2. A maintenance ticket is automatically created with villa number, timestamp, complaint details, severity level, and urgency flag.
+3. A 30-minute acknowledgment timer starts to track whether a human staff member responds in time.
+4. A guest escalation workflow is triggered because the complaint directly impacts stay quality and experience.
+5. A refund review workflow is opened so the compensation request can be assessed by management when appropriate.
+6. Live status updates continue to be sent to the guest so they do not feel ignored during the resolution process.
+
+### Who gets notified
+
+1. On-duty maintenance staff and the property manager are instantly alerted via WhatsApp, SMS, push notification, or phone call — given the 3am urgency.
+2. If unacknowledged promptly, backup staff and higher-level management receive automatic escalation alerts.
+3. The operations manager is notified for full visibility into the incident as it unfolds.
+4. The customer support or guest relations team is informed to manage communication and guest satisfaction professionally.
+5. Where compensation is likely, the finance or approvals team can be looped in early.
+
+### What gets logged
+
+1. Original guest complaint and exact timestamp of receipt.
+2. Villa number, issue category, severity level, and priority classification.
+3. Staff response times, maintenance actions, repair updates, and final resolution status.
+4. All guest communication sent during the incident.
+5. Whether a refund was requested and the final compensation outcome.
+6. A full incident record stored for future review and recurring-issue detection.
+
+### If no human responds within 30 minutes
+
+1. The incident auto-escalates to senior management or backup personnel.
+2. The guest continues to receive transparent updates rather than silence.
+3. Emergency fallbacks are triggered — alternative villa arrangements, partial compensation approval, or priority support intervention.
+4. An internal incident review is automatically scheduled post-resolution to determine root cause and prevent recurrence.
+
+---
+
+## Question C — The Learning
+
+**This is the third time in two months a guest has complained about hot water at Villa B1. What should the system do with this pattern?**
+
+Since this is the third hot water complaint in two months for Villa B1, the system should recognise it as a recurring operational issue rather than isolated guest feedback. The platform should automatically flag Villa B1 as a "repeat maintenance risk" property and surface it to operations management for investigation and a permanent fix.
+
+### What to build to prevent a fourth complaint
+
+1. Introduce proactive guest monitoring by sending a brief post-check-in message asking if all utilities — including hot water — are functioning correctly.
+2. Track and analyse complaint patterns by villa, issue type, and time of day to identify recurring operational failures automatically.
+3. Build scheduled maintenance checks for Villa B1's water heating system, particularly during hours when complaints are most commonly reported.
+4. Add automated reminders for on-duty staff to verify hot water availability before peak guest usage times, such as early mornings.
+5. Maintain a maintenance history log per villa so the team can determine whether previous fixes were temporary or ineffective.
+6. If failures continue after maintenance, the system should recommend a deeper infrastructure inspection or equipment replacement rather than another short-term fix.
+7. Flag the issue as high priority and assign it to senior maintenance staff rather than standard support handling.
