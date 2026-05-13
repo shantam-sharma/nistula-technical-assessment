@@ -1,23 +1,3 @@
-
-# What gets logged
-
-# What happens if no human responds within 30 minutes
-
-___________________________________________________________________________________________________________________________
-Question C — The Learning
-
-
-Answer:
-Since this is the third hot water complaint in two months for Villa B1, the system should recognize it as a recurring operational issue instead of treating it as isolated guest feedback. The platform should automatically flag Villa B1 as a “repeat maintenance risk” property and flag the issue to operations management for investigation and finding a permanent solution.
-To prevent this complaint from happening a fourth time, the system should:
-1. Introduce proactive guest monitoring by sending a quick pre-check message asking guests if all utilities, including hot water, are functioning properly shortly after check-in.
-2. Track and analyze complaint patterns by villa, issue type, and time of occurrence to identify recurring operational failures automatically.
-3. Build scheduled checks for Villa B1’s water heating system, especially during the hours when complaints are most commonly reported.
-4. Add automated alerts or smart reminders for on-duty staff to verify hot water availability before guest peak usage times such as early mornings.
-5. Maintain a maintenance history log for each villa so the team can identify whether previous fixes were temporary or ineffective.
-6. If repeated failures continue even after maintenance, the system should recommend deeper infrastructure inspection or replacement of the heating equipment instead of repeated short-term fixes.
-7. The issue is marked as high priority and assigned to senior maintenance staff instead of standard support handling.
-___________________________________________________________________________________________________________________________
 # PART 3 — THINKING QUESTION
 
 **SCENARIO:** It is 3am. A guest at Villa B1 sends a WhatsApp message: *"There is no hot water and we have guests arriving for breakfast in 4 hours. This is unacceptable. I want a refund for tonight."*
@@ -83,14 +63,14 @@ ________________________________________________________________________________
 at Villa B1. What should the system do with this pattern? What would you
 build to prevent this complaint from happening a fourth time?**
 
-Since this is the third hot water complaint in two months for Villa B1, the system should recognise it as a recurring operational issue rather than isolated guest feedback. The platform should automatically flag Villa B1 as a "repeat maintenance risk" property and surface it to operations management for investigation and a permanent fix.
+Since this is the third hot water complaint in two months for Villa B1, the system should recognize it as a recurring operational issue instead of treating it as isolated guest feedback. The platform should automatically flag Villa B1 as a “repeat maintenance risk” property and flag the issue to operations management for investigation and finding a permanent solution.
+### To prevent this complaint from happening a fourth time, the system should:
+1. Introduce proactive guest monitoring by sending a quick pre-check message asking guests if all utilities, including hot water, are functioning properly shortly after check-in.
+2. Track and analyze complaint patterns by villa, issue type, and time of occurrence to identify recurring operational failures automatically.
+3. Build scheduled checks for Villa B1’s water heating system, especially during the hours when complaints are most commonly reported.
+4. Add automated alerts or smart reminders for on-duty staff to verify hot water availability before guest peak usage times such as early mornings.
+5. Maintain a maintenance history log for each villa so the team can identify whether previous fixes were temporary or ineffective.
+6. If repeated failures continue even after maintenance, the system should recommend deeper infrastructure inspection or replacement of the heating equipment instead of repeated short-term fixes.
+7. The issue is marked as high priority and assigned to senior maintenance staff instead of standard support handling.
 
-### What to build to prevent a fourth complaint
 
-1. Introduce proactive guest monitoring by sending a brief post-check-in message asking if all utilities — including hot water — are functioning correctly.
-2. Track and analyse complaint patterns by villa, issue type, and time of day to identify recurring operational failures automatically.
-3. Build scheduled maintenance checks for Villa B1's water heating system, particularly during hours when complaints are most commonly reported.
-4. Add automated reminders for on-duty staff to verify hot water availability before peak guest usage times, such as early mornings.
-5. Maintain a maintenance history log per villa so the team can determine whether previous fixes were temporary or ineffective.
-6. If failures continue after maintenance, the system should recommend a deeper infrastructure inspection or equipment replacement rather than another short-term fix.
-7. Flag the issue as high priority and assign it to senior maintenance staff rather than standard support handling.
