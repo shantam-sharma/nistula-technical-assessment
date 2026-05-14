@@ -197,8 +197,8 @@ generates responses ready to send to guests
 The AI functionality is kept in a separate service to maintain clean and organized code.
 
 ## Environment Variables
-PORT	        3000
-CLAUDE_API_KEY	Anthropic API key
+- PORT	        3000
+- CLAUDE_API_KEY	Anthropic API key
 
 ## Testing
 The system was tested using multiple payload categories:
