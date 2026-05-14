@@ -64,15 +64,14 @@ CREATE TABLE guests (
 
 -- Email not unique ?
 -- Real world hospatilaty system often
--- lack emails, have shared emails on diff platform.
+-- lack emails, have shared emails on different platform.
 
 -- TABLE 2 Stores all properties/villas managed by the platform.
-
 CREATE TABLE properties (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     property_code VARCHAR(100) NOT NULL UNIQUE,
     name VARCHAR(300) NOT NULL,
-    location VARCHAR(255) NOT NULL,
+    location VARCHAR(300) NOT NULL,
     bedrooms INTEGER NOT NULL CHECK (bedrooms > 0),
     max_guests INTEGER NOT NULL CHECK (max_guests > 0),
     base_rate NUMERIC(10,2) NOT NULL CHECK (base_rate >= 0),
@@ -80,9 +79,10 @@ CREATE TABLE properties (
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
--- wifi_password VARCHAR(300), can be included here but im keeping it out as its not always necessary
---Production systems may: encrypt, restrict access.
+-- wifi_password VARCHAR(300), can be included here but im keeping it out.
+-- Production systems may: encrypt or restrict access.
 -- caretaer_hours can later have -> start_time ,end_time ,availability_schedule
+
 CREATE INDEX idx_properties_property_code
 ON properties(property_code);
 CREATE INDEX idx_properties_location
@@ -143,8 +143,6 @@ no instead of checkng thousands of rows manually it can jump directly to the res
 -- guest reservations
 CREATE INDEX idx_reservations_guest_id
 ON reservations(guest_id);
--- why? we can easiy use show "all bookings for Rahul"
-
 CREATE INDEX idx_reservations_dates
 ON reservations(check_in, check_out);
 --useful to view "what bookings overlap these dates?"
@@ -210,11 +208,10 @@ CREATE TABLE messages (
 
     query_type query_type,
 
-    confidence_score NUMERIC(3,2)
-        CHECK (
-            confidence_score IS NULL
-            OR (confidence_score >= 0 AND confidence_score <= 1)
-        ),
+    confidence_score NUMERIC(3,2) CHECK(
+        confidence_score IS NULL
+        OR (confidence_score >= 0 AND confidence_score <= 1)
+    ),
 
     ai_drafted_reply TEXT,
     final_sent_reply TEXT,
@@ -316,7 +313,7 @@ ON DELETE SET NULL;
 -- availability without making a booking, which meant
 -- conversations could not strictly require a reservation.
 --
--- Designing the schema in a normalized way while still
+-- Designing the schema while still
 -- maintaining clear relationships between all entities
 -- took the most thought, as the goal was to avoid
 -- duplicated data while keeping the system scalable

@@ -10,7 +10,7 @@ nistula-technical-assessment/
 ├── src/
 │   │
 │   ├── server.js
-│   │
+│   ├── app.js
 │   ├── routes/
 │   │   └── webhook.routes.js
 │   │
@@ -29,3 +29,6 @@ nistula-technical-assessment/
 │   │
 │   └── middleware/
 │       └── error.middleware.js
+|
+├── docs/
+|   └── architecture.md
