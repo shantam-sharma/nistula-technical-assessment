@@ -1,3 +1,4 @@
+```
 nistula-technical-assessment/
 │
 ├── README.md
@@ -32,3 +33,4 @@ nistula-technical-assessment/
 |
 ├── docs/
 |   └── architecture.md
+```
